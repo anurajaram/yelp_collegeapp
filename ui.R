@@ -4,7 +4,7 @@
 #               Basic webpage/app with action button for processing input 
 #               and displaying output on 2-tabbed panes
 
-source("yelp_api_calls.R")
+source("fn_yelp_api_calls.R")
 
 ui <- shinyUI(pageWithSidebar(
   # header for the Shiny app
@@ -15,12 +15,11 @@ ui <- shinyUI(pageWithSidebar(
     h4("User Input Panel"),
     br(),
     textInput("text_input", "Type city name or zipcode", value = "19104"),
-   # textInput("text_inputx", "Type something else here", value = "user"),
-    sliderInput("slider1", label = h4("Select Radius in Miles"), min = 0, 
+   
+    sliderInput("slider1", label = "Select Radius in Miles", min = 0, 
                 max = 20, value = 4),
     br(),
-    textInput("text_output1", "This box is constantly updating"),
-   # textInput("text_outputx", "Second box is also constantly updating"),
+    
     actionButton("updateButton", "Analyze Input")
     
   ),
@@ -30,11 +29,12 @@ ui <- shinyUI(pageWithSidebar(
   mainPanel(
     h4("Output Panel"),
   
-  tabsetPanel(type = "tabs", 
+    tabsetPanel(type = "tabs", 
               tabPanel("Tab1", 
                        br(),
-                       textInput("text_output2", "Updates only with action button click"),
-                       textInput("value", "value in metres")
+                       textInput("text_output2", "Updates only with action button click",
+                                 value = "19104"),
+                       textInput("value", "value in metres", value = 4)
                        ), 
               tabPanel("Plot",
                        br(),
