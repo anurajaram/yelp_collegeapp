@@ -91,16 +91,6 @@ yelp_map <- function( radius_miles, locn, n )
 
 
 
-# t1long <- collegeresultsp[1,"latitude"]
-# t1lat<- collegeresultsp[1,"longitude"]
-# map_demog <- leaflet(collegeresultsp) %>% 
-#   setView(t1lat, t1long, zoom = 3) %>%
-#   addTiles() %>%
-#   addMarkers(~longitude, ~latitude, popup=~College,
-#              options = popupOptions(closeButton = TRUE),
-#              clusterOptions = markerClusterOptions()
-#   )
-#map_demog
 
 
 
